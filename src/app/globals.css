@@ -1,0 +1,14 @@
+
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+     .headerTop {
+         @apply flex items-center gap-1 border-r-2 border-gray-600;
+     }
+}
+
+

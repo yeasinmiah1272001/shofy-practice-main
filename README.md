@@ -1,0 +1,1 @@
+https://html.hixstudio.net/shofy-prv/shofy/index.html
