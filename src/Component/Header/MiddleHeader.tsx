@@ -33,7 +33,7 @@ const MiddleHeader = () => {
     <Container className="py-1">
       <div className="flex items-center justify-between">
        <Link href={"/"}> <Image className="w-32" src={logo} alt="logo" /></Link>
-        {/* input */}
+     
         <div className="flex-1 relative mx-12">
           <input
             type="text"
