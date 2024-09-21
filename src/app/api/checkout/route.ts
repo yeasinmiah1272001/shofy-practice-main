@@ -6,7 +6,7 @@ import Stripe from "stripe";
 export const POST =async(request:NextResponse) =>{
     const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
     try {
-        const reqBody = await request.json();
+    const reqBody = await request.json();
     const {email, item} =await reqBody;
     const extractingItems = await item.map((items:ProductType) => ({
         quantity: items.quantity,
@@ -31,17 +31,19 @@ export const POST =async(request:NextResponse) =>{
           email,
         },
       });
-      console.log('session',session);
-      
 
     return NextResponse.json({
         succes:true,
         message:"server connected",
         id:session.id
-    })
+    },{status:200})
         
     } catch (error) {
         console.log("err", error)
+        NextResponse.json({
+          message:'unavailale',
+          success:false
+        })
         
     }
 }
