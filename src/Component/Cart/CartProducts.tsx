@@ -6,6 +6,7 @@ import Button from "../Header/ui/Button";
 import CartProduct from "./CartProduct";
 import { ProductType, StateType } from "../../../type";
 import CartSummary from "./CartSummary";
+
 interface props {
   product: {
     products: [];
@@ -13,14 +14,16 @@ interface props {
 }
 
 const CartProducts = () => {
-  const { cart } = useSelector((state:StateType) => state.shopy);
+  const { cart } = useSelector((state: StateType) => state.shopy);
 
   return (
     <Container className="mt-3">
       <section>
         {cart.length > 0 ? (
           <section className=" ">
-            <p className="text-green-500 text-xl font-semibold">Products Available</p>
+            <p className="text-green-500 text-xl font-semibold">
+              Products Available
+            </p>
             <section className="grid lg:grid-cols-3 gap-5 ">
               {/* left */}
               <div className=" col-span-2">
@@ -30,7 +33,7 @@ const CartProducts = () => {
               </div>
               {/* right */}
               <div className=" col-span-1 h-30">
-                <CartSummary cart={cart}/>
+                <CartSummary cart={cart} />
               </div>
             </section>
           </section>
