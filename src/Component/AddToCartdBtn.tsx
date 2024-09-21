@@ -1,18 +1,18 @@
 "use client";
 
 import { addTocart, decressQuantity, incressQuantity } from "@/redux/shopySlice";
-import { ProductType } from "../../type";
+import { ProductType, StateType } from "../../type";
 
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { FiMinus, FiPlus } from "react-icons/fi";
 import toast from "react-hot-toast";
 
-interface Props {
-  product: ProductType;
+interface PropsType {
+  product?: ProductType;
 }
 
-const AddToCartBtn = ({ product }: Props) => {
+const AddToCartBtn = ({ product }: PropsType) => {
   const dispatch = useDispatch();
 
   const handleAddToCart = () => {
@@ -22,20 +22,20 @@ const AddToCartBtn = ({ product }: Props) => {
     }
   };
 
-  const { cart } = useSelector((state) => state.shopy);
+  const { cart } = useSelector((state:StateType) => state.shopy);
   const [existing, setExisting] = useState<ProductType | null>(null);
 
   useEffect(() => {
-    const availableProduct = cart.find((item) => item.id === product.id);
+    const availableProduct = cart.find((item) => item.id === product?.id);
     setExisting(availableProduct || null);
-  }, [cart, product.id]);
+  }, [cart, product?.id]);
 
   const handlePlus = () =>{
-    dispatch(incressQuantity(product.id)),
-    toast.success(`${product.title} added`)
+    dispatch(incressQuantity(product?.id)),
+    toast.success(`${product?.title} added`)
   }
   const handleMinus = () =>{
-    dispatch(decressQuantity(product.id))
+    dispatch(decressQuantity(product?.id))
     toast("decress success")
   
     
@@ -48,7 +48,7 @@ const AddToCartBtn = ({ product }: Props) => {
           <button onClick={handleMinus} className="flex items-center bg-transparent border border-skyColor text-black rounded-full px-4 py-1.5 hover:bg-skyColor hover:text-black duration-300">
             <FiMinus />
           </button>
-          <span className="text-lg font-semibold">{existing.quentity}</span>
+          <span className="text-lg font-semibold">{existing.quantity}</span>
           <button  onClick={handlePlus} className="flex items-center bg-transparent border border-skyColor text-black rounded-full px-4 py-1.5 hover:bg-skyColor hover:text-black duration-300">
             <FiPlus />
           </button>

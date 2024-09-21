@@ -4,7 +4,8 @@ import Container from "@/Container/Container";
 import { useSelector } from "react-redux";
 import Button from "../Header/ui/Button";
 import CartProduct from "./CartProduct";
-import { ProductType } from "../../../type";
+import { ProductType, StateType } from "../../../type";
+import CartSummary from "./CartSummary";
 interface props {
   product: {
     products: [];
@@ -12,8 +13,7 @@ interface props {
 }
 
 const CartProducts = () => {
-  // @ts-ignore
-  const { cart } = useSelector((state) => state.shopy);
+  const { cart } = useSelector((state:StateType) => state.shopy);
 
   return (
     <Container className="mt-3">
@@ -30,7 +30,7 @@ const CartProducts = () => {
               </div>
               {/* right */}
               <div className=" col-span-1 h-30">
-                <h1>right</h1>
+                <CartSummary cart={cart}/>
               </div>
             </section>
           </section>
@@ -40,7 +40,7 @@ const CartProducts = () => {
               Oops! Product Not Available
             </p>
             <p className="text-lg text-gray-500">
-              It seems your cart is empty. Let's get you back to the store!
+              It seems your cart is empty. Lets get you back to the store!
             </p>
             <Button href={"/"} className="rounded-md">
               Back home

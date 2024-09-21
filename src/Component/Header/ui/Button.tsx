@@ -21,7 +21,7 @@ const Button = ({children, className, href} : Props) => {
           {children}
         </Link>
       ) : (
-        <button className={twMerge("bg-red-500 h-11 w-24 text-white", className)}>
+        <button  className={twMerge("bg-red-500 h-11 w-24 text-white", className)}>
           {children}
         </button>
       )}

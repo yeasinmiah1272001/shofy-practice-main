@@ -5,9 +5,13 @@ import ProductImage from "@/Component/ProductImage";
 import Container from "@/Container/Container";
 import { getData } from "@/helper";
 
-import React from "react";
 
-const SinglePage = async ({ params }) => {
+interface Props {
+  params: {
+    id: string;
+  };
+}
+const SinglePage = async ({ params }:Props) => {
   const { id } = params;
   const endPoint = `https://dummyjson.com/products/${id}`;
   const product = await getData(endPoint);

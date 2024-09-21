@@ -12,14 +12,14 @@ import Link from "next/link";
 import { signIn, useSession } from "next-auth/react";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from "@/redux/shopySlice";
+import { StateType } from "../../../type";
 
 const MiddleHeader = () => {
   const [search, setSearch] = useState("")
   const {data:session} = useSession()
   const disPatch = useDispatch()
-  const {cart} = useSelector((state => state.shopy))
-  console.log("this is cart", cart)
-
+  const {cart} = useSelector((state:StateType) => state.shopy)
+  // console.log("this is cart", cart)
   useEffect(() =>{
     if(session){
       disPatch(addUser(session.user))
@@ -34,7 +34,7 @@ const MiddleHeader = () => {
       <div className="flex items-center justify-between">
        <Link href={"/"}> <Image className="w-32" src={logo} alt="logo" /></Link>
      
-        <div className="flex-1 relative mx-12">
+        <div className="flex-1   relative mx-12">
           <input
             type="text"
             value={search}

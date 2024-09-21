@@ -46,7 +46,7 @@ const CartProduct = ({ product }: Props) => {
           <p className="text-gray-600">Category: {product.category}</p>
           <p className="text-gray-600">Brand: {product.brand}</p>
           <p className="text-black font-medium">
-            Price: {product.price * product.quentity}
+          <h1 className='text-black font-medium'> Price: <FormatedPrice className="" amount={product.price * product.quantity!}/></h1>
           </p>
           <div>
             {product?.availabilityStatus && (
@@ -59,11 +59,11 @@ const CartProduct = ({ product }: Props) => {
             <p className="text-sm text-gray-600 mt-1">
               You are saving{" "}
               <FormatedPrice
-                className="text-sm text-gray-600 mt-1 text-red-400"
+                className="text-sm  mt-1 text-red-400"
                 amount={
                   product.price *
                   (product.discountPercentage / 100) *
-                  product.quentity
+                  product.quantity!
                 }
               />{" "}
               on this purchase
