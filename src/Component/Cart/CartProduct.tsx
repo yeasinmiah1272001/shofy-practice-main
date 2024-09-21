@@ -12,13 +12,11 @@ interface Props {
 }
 
 const CartProduct = ({ product }: Props) => {
+  const dispatch = useDispatch();
 
-    const dispatch = useDispatch()
-
-    const handleDelete = () =>{
-        dispatch(deleteCount(product.id))
-    }
-
+  const handleDelete = () => {
+    dispatch(deleteCount(product.id));
+  };
 
   return (
     <div className="shadow-md shadow-black text-black border-gray-500 p-5 my-2 rounded-md flex items-center justify-between ">
@@ -46,7 +44,14 @@ const CartProduct = ({ product }: Props) => {
           <p className="text-gray-600">Category: {product.category}</p>
           <p className="text-gray-600">Brand: {product.brand}</p>
           <p className="text-black font-medium">
-          <h1 className='text-black font-medium'> Price: <FormatedPrice className="" amount={product.price * product.quantity!}/></h1>
+            <span className="text-black font-medium">
+              {" "}
+              Price:{" "}
+              <FormatedPrice
+                className=""
+                amount={product.price * product.quantity!}
+              />
+            </span>
           </p>
           <div>
             {product?.availabilityStatus && (
@@ -75,10 +80,10 @@ const CartProduct = ({ product }: Props) => {
         </div>
       </div>
       <div onClick={handleDelete} className="cursor-pointer flex items-center">
-                <span className="bg-gray-300 text-black border h-8 w-8 rounded-full flex items-center justify-center transition-all duration-300 hover:bg-red-500 hover:text-white hover:shadow-lg">
-                    <IoClose size={20} />
-                </span>
-            </div>
+        <span className="bg-gray-300 text-black border h-8 w-8 rounded-full flex items-center justify-center transition-all duration-300 hover:bg-red-500 hover:text-white hover:shadow-lg">
+          <IoClose size={20} />
+        </span>
+      </div>
     </div>
   );
 };

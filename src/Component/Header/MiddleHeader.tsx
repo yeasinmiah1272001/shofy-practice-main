@@ -1,6 +1,5 @@
-"use client"
+"use client";
 import Image from "next/image";
-
 
 import Container from "@/Container/Container";
 import { FaRegUser } from "react-icons/fa";
@@ -15,25 +14,27 @@ import { addUser, removeUser } from "@/redux/shopySlice";
 import { StateType } from "../../../type";
 
 const MiddleHeader = () => {
-  const [search, setSearch] = useState("")
-  const {data:session} = useSession()
-  const disPatch = useDispatch()
-  const {cart} = useSelector((state:StateType) => state.shopy)
+  const [search, setSearch] = useState("");
+  const { data: session } = useSession();
+  const disPatch = useDispatch();
+  const { cart } = useSelector((state: StateType) => state.shopy);
   // console.log("this is cart", cart)
-  useEffect(() =>{
-    if(session){
-      disPatch(addUser(session.user))
+  useEffect(() => {
+    if (session) {
+      disPatch(addUser(session.user));
+    } else {
+      disPatch(removeUser());
     }
-    else{
-      disPatch(removeUser())
-    }
-  },[session?.user])
+  }, [session?.user]);
 
   return (
     <Container className="py-1">
       <div className="flex items-center justify-between">
-       <Link href={"/"}> <Image className="w-32" src={logo} alt="logo" /></Link>
-     
+        <Link href={"/"}>
+          {" "}
+          <Image className="w-32" src={logo} alt="logo" />
+        </Link>
+
         <div className="flex-1   relative mx-12">
           <input
             type="text"
@@ -55,25 +56,41 @@ const MiddleHeader = () => {
         {/* content */}
         <div>
           <div className="flex gap-3 items-center">
-            {
-              session?.user ? <Link href={"/profile"}><div className="flex  items-center gap-1">
-              <div className="">
-              <Image className="h-14 w-14 rounded-full" src={session.user.image!} width={200} height={200} alt="image"/>
-              </div>
-              <div>
-                <h1 className="text-sm">Hello,{session?.user?.name}</h1>
-                <p className=" font-serif">View Profile </p>
-              </div>
-              </div></Link> : <><div onClick={()=>signIn()} className="flex  items-center gap-1">
-            <div className="border-2 border-gray-600 p-3 text-xl rounded-full">
-              <FaRegUser />
-            </div>
-            <div>
-              <h1 className="text-sm">Hello,{session?.user?.name}</h1>
-              <p className=" font-serif">Login /register </p>
-            </div>
-            </div></>
-            }
+            {session?.user ? (
+              <Link href={"/profile"}>
+                <div className="flex  items-center gap-1">
+                  <div className="">
+                    <Image
+                      className="h-14 w-14 rounded-full"
+                      src={session.user.image!}
+                      width={200}
+                      height={200}
+                      alt="image"
+                    />
+                  </div>
+
+                  <div>
+                    <h1 className="text-sm">Hello,{session?.user?.name}</h1>
+                    <p className=" font-serif">View Profile </p>
+                  </div>
+                </div>
+              </Link>
+            ) : (
+              <>
+                <div
+                  onClick={() => signIn()}
+                  className="flex  items-center gap-1"
+                >
+                  <div className="border-2 border-gray-600 p-3 text-xl rounded-full">
+                    <FaRegUser />
+                  </div>
+                  <div>
+                    <h1 className="text-sm">Hello,{session?.user?.name}</h1>
+                    <p className=" font-serif">Login /register </p>
+                  </div>
+                </div>
+              </>
+            )}
 
             <Link href={"/favourite"} className="relative">
               <MdFavoriteBorder className="text-3xl text-gray-600" />
