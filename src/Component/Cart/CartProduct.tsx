@@ -6,6 +6,7 @@ import Link from "next/link";
 import { IoClose } from "react-icons/io5";
 import { useDispatch } from "react-redux";
 import { deleteCount } from "@/redux/shopySlice";
+import toast from "react-hot-toast";
 
 interface Props {
   product: ProductType;
@@ -16,6 +17,7 @@ const CartProduct = ({ product }: Props) => {
 
   const handleDelete = () => {
     dispatch(deleteCount(product.id));
+    toast.success("deleted success");
   };
 
   return (
