@@ -17,54 +17,40 @@ export const counterSlice = createSlice({
   initialState,
   reducers: {
     addTocart: (state, action) => {
-     
-
       const existProduct = state.cart.find(
-      
         (item) => item.id === action.payload.id
       );
 
       if (existProduct) {
         existProduct.quantity! += 1;
-     
       } else {
-
-        state.cart.push({ ...action.payload, quantity: 1 })
-          
+        state.cart.push({ ...action.payload, quantity: 1 });
       }
     },
 
-    incressQuantity:(state, action)=>{
-      
+    incressQuantity: (state, action) => {
       const existProduct = state.cart.find(
-
         (item) => item.id === action.payload
       );
-      if(existProduct){
- 
-        existProduct.quantity! +=1
+      if (existProduct) {
+        existProduct.quantity! += 1;
       }
-
-
     },
 
-    decressQuantity:(state, action) =>{
+    decressQuantity: (state, action) => {
       const existProduct = state.cart.find(
-         // @ts-ignore
+        // @ts-ignore
         (item) => item.id === action.payload
       );
       // @ts-ignore
-      if(existProduct.quantity > 1){
-         // @ts-ignore
-        existProduct.quantity -=1
-        
-
+      if (existProduct.quantity > 1) {
+        // @ts-ignore
+        existProduct.quantity -= 1;
       }
-
     },
 
-    deleteCount:(state, action) =>{
-      state.cart = state.cart.filter((item) =>item.id !== action.payload) 
+    deleteCount: (state, action) => {
+      state.cart = state.cart.filter((item) => item.id !== action.payload);
     },
 
     addUser: (state, action) => {
@@ -76,7 +62,13 @@ export const counterSlice = createSlice({
   },
 });
 
-// Action creators are generated for each case reducer function
-export const { addUser, addTocart, removeUser, incressQuantity, decressQuantity, deleteCount } = counterSlice.actions;
+export const {
+  addUser,
+  addTocart,
+  removeUser,
+  incressQuantity,
+  decressQuantity,
+  deleteCount,
+} = counterSlice.actions;
 
 export default counterSlice.reducer;
