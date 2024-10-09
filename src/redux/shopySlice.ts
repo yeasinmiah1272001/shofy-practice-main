@@ -53,6 +53,10 @@ export const counterSlice = createSlice({
       state.cart = state.cart.filter((item) => item.id !== action.payload);
     },
 
+    reseetCart: (state) => {
+      state.cart = [];
+    },
+
     addUser: (state, action) => {
       state.userInfo = action.payload;
     },
@@ -66,6 +70,7 @@ export const {
   addUser,
   addTocart,
   removeUser,
+  reseetCart,
   incressQuantity,
   decressQuantity,
   deleteCount,
