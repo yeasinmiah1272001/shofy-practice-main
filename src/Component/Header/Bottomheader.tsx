@@ -25,7 +25,11 @@ export const Bottomheader = () => {
               className="dropdown-content menu space-y-3 overflow-auto bg-slate-800 text-white rounded-box z-[1] w-52 p-3 shadow"
             >
               {categories.map((item) => (
-                <div key={item.id} className="flex gap-2   ">
+                <Link
+                  href={"/products"}
+                  key={item.id}
+                  className="flex gap-2   "
+                >
                   <Image
                     className="w-10"
                     src={item.img}
@@ -33,8 +37,8 @@ export const Bottomheader = () => {
                     height={300}
                     width={300}
                   />
-                  <li>{item.name}</li>
-                </div>
+                  <li>Best product</li>
+                </Link>
               ))}
             </ul>
           </div>
