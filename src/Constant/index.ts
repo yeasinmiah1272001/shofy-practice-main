@@ -17,112 +17,100 @@ export const bannerapi = {
   image: bannerImageOne,
 };
 
-export const secondbanner = {
-  _id: 1001,
-  priceText: "Starting at $999.90",
-  title: "The best tablet Collection 2024",
-  textOne: "Exclusive offer",
-  offerPrice: "-40%",
-  textTwo: "off this week",
-  buttonLink: "/products",
-  image: bannerImageTwo,
-};
-
 export const categories = [
   {
-    _id: 1001,
-    name: "TV & Audio",
-    image: "https://i.ibb.co/kM0FR2h/cat-Tv-Audio.webp",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis repellendus dolore.",
-    _base: "tvAndAudio",
+    id: 1,
+    name: "Image 1",
+    img: "https://i.ibb.co.com/12NXDJZ/1-1.png",
   },
   {
-    _id: 1002,
-    name: "TV Box",
-    image: "https://i.ibb.co/71hR65V/catTvBox.webp",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis repellendus dolore.",
-    _base: "tvBox",
+    id: 2,
+    name: "Image 2",
+    img: "https://i.ibb.co.com/1QRgFPV/1-2.png",
   },
   {
-    _id: 1003,
-    name: "Power Tools",
-    image: "https://i.ibb.co/0V0g6Gz/cat-Powertool.webp",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis repellendus dolore.",
-    _base: "powerTools",
+    id: 3,
+    name: "Image 3",
+    img: "https://i.ibb.co.com/wrNj9rc/1-3.png",
   },
   {
-    _id: 1004,
-    name: "Headphones",
-    image: "https://i.ibb.co/zST2Xdp/cat-Headphone.webp",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis repellendus dolore.",
-    _base: "headphones",
+    id: 4,
+    name: "Image 4",
+    img: "https://i.ibb.co.com/Y7YpHF7/1-4.png",
   },
   {
-    _id: 1005,
-    name: "Cell Phones",
-    image: "https://i.ibb.co/jgk59BL/catPhone.webp",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis repellendus dolore.",
-    _base: "cellPhones",
+    id: 5,
+    name: "Image 5",
+    img: "https://i.ibb.co.com/StPhmSS/1-5.png",
   },
   {
-    _id: 1006,
-    name: "Smart Watches",
-    image: "https://i.ibb.co/B4NKfBZ/cat-Smart-Watch.webp",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis repellendus dolore.",
-    _base: "smartWatches",
+    id: 6,
+    name: "Image 6",
+    img: "https://i.ibb.co.com/52QtnwS/1-6.png",
   },
   {
-    _id: 1007,
-    name: "Game & Video",
-    image: "https://i.ibb.co/4gwLwT2/cat-Gaming.webp",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis repellendus dolore.",
-    _base: "gameAndVideo",
+    id: 7,
+    name: "Image 7",
+    img: "https://i.ibb.co.com/ft3LKpB/1-7.png",
   },
   {
-    _id: 1008,
-    name: "Robot Clean",
-    image: "https://i.ibb.co/xjpdQrr/cat-Robot-Clean.webp",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis repellendus dolore.",
-    _base: "robotClean",
+    id: 8,
+    name: "Image 8",
+    img: "https://i.ibb.co.com/3hrhBSg/1-8.png",
   },
   {
-    _id: 1009,
-    name: "Sport Watches",
-    image: "https://i.ibb.co/HdNVLzh/cat-Sport-Watch.webp",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis repellendus dolore.",
-    _base: "sportWatches",
+    id: 9,
+    name: "Image 9",
+    img: "https://i.ibb.co.com/H7pcyHP/1-9.png",
   },
   {
-    _id: 1010,
-    name: "Tablets",
-    image: "https://i.ibb.co/qCzTx4F/cat-Tablet.webp",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis repellendus dolore.",
-    _base: "tablets",
+    id: 10,
+    name: "Image 10",
+    img: "https://i.ibb.co.com/wsLc4NQ/1-10.png",
   },
   {
-    _id: 1011,
-    name: "Computers & Laptop",
-    image: "https://i.ibb.co/74bZ8PH/cat-Computer.webp",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis repellendus dolore.",
-    _base: "computersAndLaptop",
+    id: 11,
+    name: "Image 11",
+    img: "https://i.ibb.co.com/tzXGKB4/1-13.png",
   },
   {
-    _id: 1012,
-    name: "Cameras & Photos",
-    image: "https://i.ibb.co/SVQVWSS/cat-Camera.webp",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis repellendus dolore.",
-    _base: "camerasAndPhotos",
+    id: 12,
+    name: "Image 12",
+    img: "https://i.ibb.co.com/LpgLMSk/1-15.png",
+  },
+  {
+    id: 13,
+    name: "Image 13",
+    img: "https://i.ibb.co.com/d4ySnMS/1-16.png",
+  },
+  {
+    id: 14,
+    name: "Image 14",
+    img: "https://i.ibb.co.com/hBS0twt/1-17.png",
+  },
+  {
+    id: 15,
+    name: "Image 15",
+    img: "https://i.ibb.co.com/4RMdPHx/1-18.png",
+  },
+  {
+    id: 16,
+    name: "Image 16",
+    img: "https://i.ibb.co.com/3Fr1r0F/1-19.png",
+  },
+  {
+    id: 17,
+    name: "Image 17",
+    img: "https://i.ibb.co.com/8bLnHCq/1-20.png",
+  },
+  {
+    id: 18,
+    name: "Image 18",
+    img: "https://i.ibb.co.com/C8JmVy7/1-21.png",
+  },
+  {
+    id: 19,
+    name: "Image 19",
+    img: "https://i.ibb.co.com/Cbg4d3h/1-23.png",
   },
 ];

@@ -25,10 +25,10 @@ export const Bottomheader = () => {
               className="dropdown-content menu space-y-3 overflow-auto bg-slate-800 text-white rounded-box z-[1] w-52 p-3 shadow"
             >
               {categories.map((item) => (
-                <div key={item._id} className="flex gap-2   ">
+                <div key={item.id} className="flex gap-2   ">
                   <Image
                     className="w-10"
-                    src={item.image}
+                    src={item.img}
                     alt="img"
                     height={300}
                     width={300}
