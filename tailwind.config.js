@@ -11,7 +11,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        bannerBg:"#115061",
+        bannerBg: "#115061",
         themeColor: "#0C55AA",
         lightBg: "#f4f7f9",
         themeWhite: "#ffffff",
@@ -25,5 +25,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 };

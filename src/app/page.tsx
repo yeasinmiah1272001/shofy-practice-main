@@ -12,7 +12,6 @@ export default async function Home() {
     <main>
       <Banner />
       <ProductList product={product} />
-      <h1 className="text-red-600">E-Commarce-Shopy</h1>
     </main>
   );
 }
